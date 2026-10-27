@@ -1,6 +1,6 @@
 
 import unittest
-from booking import Booking
+from Day1.booking import Booking
 
 
 class TestBooking(unittest.TestCase):
