@@ -67,3 +67,23 @@ records = [
 
 for booking in completed_bookings(records):
     print(booking)
+
+
+def high_value_bookings(bookings, minimum_fare):
+    for booking in bookings:
+        if(
+            booking['status']=='completed'
+            and booking['fare'] >= minimum_fare
+        ):
+            yield booking['id']
+
+
+bookings = [
+    {"id": 1, "status": "completed", "fare": 200},
+    {"id": 2, "status": "pending", "fare": 500},
+    {"id": 3, "status": "completed", "fare": 300},
+    {"id": 4, "status": "cancelled", "fare": 700},
+]
+
+for booking in high_value_bookings(bookings, 200):
+    print(booking)
